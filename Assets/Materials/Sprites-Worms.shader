@@ -6,8 +6,11 @@ Shader "Sprites/Worms"
 	{
 		[PerRendererData] _MainTex("Sprite Texture", 2D) = "white" {}
 		_PaintMap("Paint Map", 2D) = "white" {}
+
 		_Color("Tint", Color) = (1,1,1,1)
 		_OutlineColor("Outline", Color) = (1,1,1,1)
+		_MoveTexture("MovementTexture", 2D) = "white" {}
+		_MoveFrequency("Move Frequency",Range(0,100)) = 1	
 		[MaterialToggle] PixelSnap("Pixel snap", Float) = 0
 		[HideInInspector] _RendererColor("RendererColor", Color) = (1,1,1,1)
 		[HideInInspector] _Flip("Flip", Vector) = (1,1,1,1)
@@ -43,11 +46,14 @@ Shader "Sprites/Worms"
 #include "UnitySprites.cginc"
 
 	sampler2D _PaintMap;
+	sampler2D _MoveTexture;
 	fixed4 _OutlineColor;
+	half _MoveFrequency;
 
 	fixed4 Frag(v2f IN) : SV_Target
 	{
-		fixed4 c = SampleSpriteTexture(IN.texcoord) * IN.color;
+		half cosTime = cos(_Time.y * _MoveFrequency + cos(IN.texcoord.x * 4) + sin(IN.texcoord.y * 4));
+		fixed4 c = SampleSpriteTexture(IN.texcoord) * IN.color * step(0,cosTime) +  tex2D(_MoveTexture, IN.texcoord)* IN.color * step(cosTime,0);		
 		fixed4 paint = tex2D(_PaintMap, IN.texcoord);
 		c.a *= step(0.1,paint.r);
 		c.rgb = _OutlineColor * step(paint.r,0.9) + c.rgb * step(0.9,paint.r);
