@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
     public void AddNewRequest(MagicRequest magicRequest)
     {
         PixelRequest pixelRequest = new PixelRequest();
+        pixelRequest.name = magicRequest.type.ToString();
         pixelRequest.pixelCountRequested = magicRequest.pixelValue;
         pixelRequest.endTime = Time.time + timePerRequest;
 
@@ -86,11 +87,16 @@ public class GameManager : MonoBehaviour
             case MagicRequest.Direction.Left:
                 leftRequests.Add(pixelRequest);
                 break;
+            case MagicRequest.Direction.Both:
+                leftRequests.Add(pixelRequest);
+                rightRequests.Add(pixelRequest);
+                break;
         }
     }
 
     public class PixelRequest
     {
+        public string name;
         public int pixelCountRequested;
         public int pixelCleared;
         public float endTime;
@@ -107,6 +113,10 @@ public class GameManager : MonoBehaviour
         {
             get
             {
+#if UNITY_EDITOR
+                if (!IsCleared && Time.time >= endTime)
+                    Debug.Log("Failed " + name + "(" + pixelCleared + "/" + pixelCountRequested + ")");
+#endif
                 return !IsCleared && Time.time >= endTime;
             }
         }

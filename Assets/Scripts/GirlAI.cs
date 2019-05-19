@@ -67,7 +67,7 @@ public class GirlAI : MonoBehaviour
         requests.RemoveAt(rand);
 
 
-        if(request.type != MagicRequest.Type.Around)
+        if(request.direction != MagicRequest.Direction.Both)
             anim.SetBool("Right", request.IsRight);
         anim.SetInteger("SpellType", request.SpellId);
         anim.SetTrigger("Spell");
@@ -81,7 +81,7 @@ public class GirlAI : MonoBehaviour
 public struct MagicRequest
 {
     public enum Type { Small,Medium,Big,Around}
-    public enum Direction { Right, Left}
+    public enum Direction { Right, Left,Both}
     public int pixelValue
     {
         get
@@ -95,7 +95,7 @@ public struct MagicRequest
                 case Type.Big:
                     return 50;
                 case Type.Around:
-                    return 100;
+                    return 40;
                 default:
                     return 0;
             }
@@ -105,8 +105,9 @@ public struct MagicRequest
     public MagicRequest(Type type)
     {
         this.type = type;
-        direction = Direction.Right;
-        direction = GetPseudoRandomDirection();
+        direction = Direction.Both;
+        if(type!=Type.Around)
+            direction = GetPseudoRandomDirection();
     }
 
     public int SpellId
