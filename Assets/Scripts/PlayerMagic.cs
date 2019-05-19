@@ -22,7 +22,10 @@ public class PlayerMagic : MonoBehaviour
         if(Input.GetMouseButton(0))
         {
             int pixelCleared = 0;
-            DrawOnTexture.Instance.Draw(Input.mousePosition, out pixelCleared);
+            Vector2 position = Input.mousePosition;
+            position.x /= Screen.width;
+            position.y /= Screen.height;
+            DrawOnTexture.Instance.Draw(position, out pixelCleared);
 
             onPlayerDraw.Invoke(pixelCleared);
         }

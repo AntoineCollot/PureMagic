@@ -6,7 +6,7 @@ public class ButterfliesEmission : MonoBehaviour
 {
     ParticleSystem particles;
 
-    public int larvaPixelCleared;
+    int larvaPixelCleared;
     public int larvaPixelPerButterfly;
 
     // Start is called before the first frame update

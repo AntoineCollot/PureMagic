@@ -53,6 +53,8 @@ public class DrawOnTexture : MonoBehaviour
         UpdateMap();
 
         lastRemaining = Remaining;
+
+        Debug.Log("Pixels to clear :" + lastRemaining);
     }
 
     public void UpdateMap()
@@ -63,11 +65,13 @@ public class DrawOnTexture : MonoBehaviour
     public void Draw(Vector2 pos, out int pixelCleared)
     {
         tex = new Texture2D(rt.width, rt.height);
-
+        //Debug.Log(rt.width + " / " + rt.height);
+        //Debug.Log(Screen.width + " / " + Screen.height);
+        //Debug.Log(Camera.main.pixelWidth + " / " + Camera.main.pixelHeight);
         RenderTexture.active = rt;
         GL.PushMatrix();
         GL.LoadPixelMatrix(0, rt.width, rt.height, 0);
-        Graphics.DrawTexture(new Rect(pos.x - brushSize * 0.5f, Screen.height - pos.y - brushSize * 0.5f, brushSize, brushSize), brush);// draw the brush on PaintMap
+        Graphics.DrawTexture(new Rect(pos.x* rt.width - brushSize * 0.5f,  (1-pos.y) * rt.height - brushSize * 0.5f, brushSize, brushSize), brush);// draw the brush on PaintMap
         tex.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
         tex.Apply(false);
         GL.PopMatrix();
