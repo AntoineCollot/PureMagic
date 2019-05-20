@@ -196,27 +196,27 @@ public class GameManager : MonoBehaviour
         }
     }
 
-#if UNITY_EDITOR
-    private void OnGUI()
-    {
-        Rect rect = new Rect(10, 10, 300, 100);
-        GUI.Label(rect, "Right");
-        rect.y += 30;
-        foreach (PixelRequest request in rightRequests)
-        {
-            GUI.Label(rect, request.ToString());
-            rect.y += 30;
-        }
-        GUI.Label(rect, "Left");
-        rect.y += 30;
-        foreach (PixelRequest request in leftRequests)
-        {
-            GUI.Label(rect, request.ToString());
-            rect.y += 30;
-        }
+//#if UNITY_EDITOR
+//    private void OnGUI()
+//    {
+//        Rect rect = new Rect(10, 10, 300, 100);
+//        GUI.Label(rect, "Right");
+//        rect.y += 30;
+//        foreach (PixelRequest request in rightRequests)
+//        {
+//            GUI.Label(rect, request.ToString());
+//            rect.y += 30;
+//        }
+//        GUI.Label(rect, "Left");
+//        rect.y += 30;
+//        foreach (PixelRequest request in leftRequests)
+//        {
+//            GUI.Label(rect, request.ToString());
+//            rect.y += 30;
+//        }
 
 
 
-    }
-#endif
+//    }
+//#endif
 }

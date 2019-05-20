@@ -123,7 +123,6 @@ GameObject:
   - component: {fileID: 447932677}
   - component: {fileID: 447932680}
   - component: {fileID: 447932678}
-  - component: {fileID: 447932679}
   m_Layer: 5
   m_Name: MerciDavoirJoue
   m_TagString: Untagged
@@ -267,18 +266,6 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &447932679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447932676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f978b31ad03eff4da75ce43b462d602, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!222 &447932680
 CanvasRenderer:
   m_ObjectHideFlags: 0
