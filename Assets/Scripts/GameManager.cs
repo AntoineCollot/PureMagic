@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayerDraw(int pixelClearedCount)
     {
+        if (gameIsOver)
+            return;
+
         //Check on which side of the screen we are
         bool isDrawingRight = Input.mousePosition.x > Screen.width * 0.5f;
 
@@ -81,6 +84,8 @@ public class GameManager : MonoBehaviour
                 requests.RemoveAt(0);
                 onRequestCompleted.Invoke();
 
+                AudioManager.Instance.PlaySuccess();
+
                 //Check if the level is cleared
                 if(CheckGameEnded())
                 {
@@ -118,6 +123,9 @@ public class GameManager : MonoBehaviour
                 leftRequests.Add(pixelRequest);
                 break;
             case MagicRequest.Direction.Both:
+                //Add a little bit of time if its around
+                pixelRequest.endTime = Time.time + timePerRequest * 1.5f;
+
                 leftRequests.Add(pixelRequest);
                 PixelRequest pixelRequest2 = new PixelRequest();
                 pixelRequest2.name = pixelRequest.name;

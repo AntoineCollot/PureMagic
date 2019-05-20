@@ -54,7 +54,9 @@ public class DrawOnTexture : MonoBehaviour
 
         lastRemaining = Remaining;
 
+#if UNITY_EDITOR
         Debug.Log("Pixels to clear :" + lastRemaining);
+#endif
     }
 
     public void UpdateMap()

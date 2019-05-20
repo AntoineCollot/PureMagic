@@ -12,9 +12,24 @@ public class LevelLoader : MonoBehaviour
         LoadLevel(0);
     }
 
+    public void LoadTutoLevel()
+    {
+        LoadLevel(1);
+    }
+
+    public void LoadRealLevel()
+    {
+        LoadLevel(8);
+    }
+
     public void LoadNextLevel()
     {
         LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
+    }
+
+    public void ReloadLevel()
+    {
+        LoadLevel(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void LoadLevel(int id)
@@ -23,6 +38,6 @@ public class LevelLoader : MonoBehaviour
             return;
 
         isLoading = true;
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(id);
     }
 }

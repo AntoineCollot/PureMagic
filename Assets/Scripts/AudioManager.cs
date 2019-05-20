@@ -9,7 +9,13 @@ public class AudioManager : MonoBehaviour
 
     public GirlSFX[] girlSFX;
 
+    public AudioClip[] successClips;
+
     new AudioSource audio;
+    public AudioSource butterflyAudio;
+    public float butterlyVolume = 0.5f;
+    float targetButterlyVolume = 0f;
+    float refButterlyVolume;
 
     public static AudioManager Instance;
 
@@ -18,6 +24,20 @@ public class AudioManager : MonoBehaviour
     {
         Instance = this;
         audio = GetComponent<AudioSource>();
+    }
+
+    private void LateUpdate()
+    {
+        if(DrawOnTexture.Instance.deltaPixelDrawn>0 && Input.GetMouseButton(0))
+        {
+            targetButterlyVolume = butterlyVolume;
+        }
+        else
+        {
+            targetButterlyVolume = 0;
+        }
+
+        butterflyAudio.volume = Mathf.SmoothDamp(butterflyAudio.volume, targetButterlyVolume, ref refButterlyVolume, 0.2f);
     }
 
     public void PlayGirlSFX(Move move)
@@ -34,6 +54,11 @@ public class AudioManager : MonoBehaviour
     public void PlayClip(AudioClip clip, float volume =1)
     {
         audio.PlayOneShot(clip, volume);
+    }
+
+    public void PlaySuccess()
+    {
+        PlayClip(successClips[Random.Range(0, successClips.Length)],0.5f);
     }
 
     [System.Serializable]
