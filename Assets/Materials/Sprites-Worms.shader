@@ -55,8 +55,8 @@ Shader "Sprites/Worms"
 		half cosTime = cos(_Time.y * _MoveFrequency + cos(IN.texcoord.x * 4) + sin(IN.texcoord.y * 4));
 		fixed4 c = SampleSpriteTexture(IN.texcoord) * IN.color * step(0,cosTime) +  tex2D(_MoveTexture, IN.texcoord)* IN.color * step(cosTime,0);		
 		fixed4 paint = tex2D(_PaintMap, IN.texcoord);
-		c.a *= step(0.1,paint.r);
-		c.rgb = _OutlineColor * step(paint.r,0.9) + c.rgb * step(0.9,paint.r);
+		c.a *= step(0.0001,paint.r);
+		c.rgb = _OutlineColor * step(paint.r,0.9999) + c.rgb * step(0.9999,paint.r);
 		c.rgb *= c.a;
 		return c;
 	}

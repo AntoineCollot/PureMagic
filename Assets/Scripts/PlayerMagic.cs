@@ -7,6 +7,7 @@ public class PlayerMagic : MonoBehaviour
 {
     public class DrawEvent : UnityEvent<int> { }
     public DrawEvent onPlayerDraw = new DrawEvent();
+    Vector2 lastDrawPosition;
 
     public static PlayerMagic Instance;
 
@@ -25,7 +26,16 @@ public class PlayerMagic : MonoBehaviour
             Vector2 position = Input.mousePosition;
             position.x /= Screen.width;
             position.y /= Screen.height;
-            DrawOnTexture.Instance.Draw(position, out pixelCleared);
+
+            //If it's the first frame we press the button, don't take into account the lastPosition saved
+            if(Input.GetMouseButtonDown(0))
+            {
+                lastDrawPosition = position;
+            }
+            DrawOnTexture.Instance.Draw(position, lastDrawPosition, out pixelCleared);
+
+            //Save the position we just drawed on for next frame
+            lastDrawPosition = position;
 
             onPlayerDraw.Invoke(pixelCleared);
         }
