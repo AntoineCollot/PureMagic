@@ -8,10 +8,7 @@ public class TypeWriting : MonoBehaviour
     TextMeshProUGUI text;
 
     public float timePerCharacter;
-
-    public float endDelay;
-
-    public GameObject followUpObject;
+    public float startDelay;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +21,9 @@ public class TypeWriting : MonoBehaviour
     IEnumerator TypeWritingText()
     {
         int characterCount = text.textInfo.characterCount;
+        text.maxVisibleCharacters = 0;
+
+        yield return new WaitForSeconds(startDelay);
 
         for (int i = 0; i <= characterCount; i++)
         {
@@ -33,13 +33,5 @@ public class TypeWriting : MonoBehaviour
         }
 
         text.maxVisibleCharacters = 100;
-
-        if (followUpObject!=null)
-        {
-            yield return new WaitForSeconds(endDelay);
-
-            followUpObject.SetActive(true);
-            gameObject.SetActive(false);
-        }
     }
 }
