@@ -68,12 +68,12 @@ public class GirlAI : MonoBehaviour
             MagicRequest currentRequest = ExecuteNewRequest();
 
             //Tell the gamemanager which request has been thrown
-            GameManager.Instance.AddNewRequest(currentRequest);
+            RequestsManager.Instance.AddNewRequest(currentRequest);
 
             if(requests.Count==0)
             {
                 //Tell the game manager that we finished asking for stuff
-                GameManager.Instance.requestsAreOver = true;
+                RequestsManager.Instance.requestsAreOver = true;
             }
 
             //Wait for the anim to finish before doing anything else

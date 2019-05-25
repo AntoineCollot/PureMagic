@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8903072823949132821}
   - component: {fileID: 6791594850792515503}
   - component: {fileID: 24107709295084902}
+  - component: {fileID: 5667370423640162822}
   m_Layer: 5
   m_Name: TextMeshPro Text
   m_TagString: Untagged
@@ -67,7 +68,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Menue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4be0ab1bc190e8e47b0abb86521c0ddf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c698b3b3c700784bb24b44c15fe8339, type: 2}
   m_sharedMaterial: {fileID: 21348533777803416, guid: 4be0ab1bc190e8e47b0abb86521c0ddf,
     type: 2}
   m_fontSharedMaterials: []
@@ -143,13 +144,13 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -161,6 +162,19 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &5667370423640162822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1096954690896988813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4bf886f43b2924990f16e30f3c6ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 2
 --- !u!1 &3160666374929967274
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,6 +642,7 @@ GameObject:
   - component: {fileID: 5345501013914501841}
   - component: {fileID: 5345501013914501839}
   - component: {fileID: 5345501013914501838}
+  - component: {fileID: 1232693446530246386}
   m_Layer: 5
   m_Name: TextMeshPro Text
   m_TagString: Untagged
@@ -684,7 +699,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Reessayer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4be0ab1bc190e8e47b0abb86521c0ddf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c698b3b3c700784bb24b44c15fe8339, type: 2}
   m_sharedMaterial: {fileID: 21348533777803416, guid: 4be0ab1bc190e8e47b0abb86521c0ddf,
     type: 2}
   m_fontSharedMaterials: []
@@ -760,13 +775,13 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -778,6 +793,19 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1232693446530246386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345501013914501840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4bf886f43b2924990f16e30f3c6ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 0
 --- !u!1 &5345501013968139664
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,6 +817,7 @@ GameObject:
   - component: {fileID: 5345501013968139665}
   - component: {fileID: 5345501013968139663}
   - component: {fileID: 5345501013968139662}
+  - component: {fileID: 1419352013704199870}
   m_Layer: 5
   m_Name: TextMeshPro Text
   m_TagString: Untagged
@@ -845,7 +874,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Menue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4be0ab1bc190e8e47b0abb86521c0ddf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c698b3b3c700784bb24b44c15fe8339, type: 2}
   m_sharedMaterial: {fileID: 21348533777803416, guid: 4be0ab1bc190e8e47b0abb86521c0ddf,
     type: 2}
   m_fontSharedMaterials: []
@@ -921,13 +950,13 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -939,6 +968,19 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1419352013704199870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345501013968139664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4bf886f43b2924990f16e30f3c6ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 2
 --- !u!1 &5345501014128972294
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,6 +1122,7 @@ GameObject:
   - component: {fileID: 5345501014424316587}
   - component: {fileID: 5345501014424316586}
   - component: {fileID: 5345501014424316584}
+  - component: {fileID: 5364417620101519298}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1115,11 +1158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 079814351ecca994a8388747355b4f05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onRequestCompleted:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
   onLevelCleared:
     m_PersistentCalls:
       m_Calls:
@@ -1152,8 +1190,6 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  timePerRequest: 2
-  requestsAreOver: 0
 --- !u!114 &5345501014424316584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,6 +1202,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ea74067b3d10940a43d880e9be2247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5364417620101519298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345501014424316589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd40a1b491f0992448275f2e6c571a85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onNewRequest:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: RequestsManager+RequestEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  onRequestCompleted:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: RequestsManager+RequestEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  timePerRequest: 2
+  requestsAreOver: 0
 --- !u!1 &5345501014539890794
 GameObject:
   m_ObjectHideFlags: 0
@@ -1177,6 +1237,7 @@ GameObject:
   - component: {fileID: 5345501014539890795}
   - component: {fileID: 5345501014539890790}
   - component: {fileID: 5345501014539890793}
+  - component: {fileID: 786986923062803219}
   m_Layer: 5
   m_Name: TextMeshPro Text
   m_TagString: Untagged
@@ -1233,7 +1294,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Continuer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4be0ab1bc190e8e47b0abb86521c0ddf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c698b3b3c700784bb24b44c15fe8339, type: 2}
   m_sharedMaterial: {fileID: 21348533777803416, guid: 4be0ab1bc190e8e47b0abb86521c0ddf,
     type: 2}
   m_fontSharedMaterials: []
@@ -1309,13 +1370,13 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -1327,6 +1388,19 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &786986923062803219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345501014539890794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4bf886f43b2924990f16e30f3c6ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 1
 --- !u!1 &5345501014554864371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1397,6 +1471,7 @@ GameObject:
   - component: {fileID: 5345501014652802632}
   - component: {fileID: 5345501014652802635}
   - component: {fileID: 5345501014652802633}
+  - component: {fileID: 3678932431490693746}
   m_Layer: 5
   m_Name: TextMeshPro Text
   m_TagString: Untagged
@@ -1453,7 +1528,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Niveau 0 fini !
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4be0ab1bc190e8e47b0abb86521c0ddf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c698b3b3c700784bb24b44c15fe8339, type: 2}
   m_sharedMaterial: {fileID: 21348533777803416, guid: 4be0ab1bc190e8e47b0abb86521c0ddf,
     type: 2}
   m_fontSharedMaterials: []
@@ -1529,13 +1604,13 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -1559,6 +1634,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f978b31ad03eff4da75ce43b462d602, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3678932431490693746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345501014652802637}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4bf886f43b2924990f16e30f3c6ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 4
 --- !u!1 &5345501014717538059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,6 +1658,7 @@ GameObject:
   - component: {fileID: 5345501014717538056}
   - component: {fileID: 5345501014717538055}
   - component: {fileID: 5345501014717538054}
+  - component: {fileID: 4356116107627818861}
   m_Layer: 5
   m_Name: TextMeshPro Text
   m_TagString: Untagged
@@ -1626,7 +1715,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Tu l'as rendue triste :(
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 4be0ab1bc190e8e47b0abb86521c0ddf, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3c698b3b3c700784bb24b44c15fe8339, type: 2}
   m_sharedMaterial: {fileID: 21348533777803416, guid: 4be0ab1bc190e8e47b0abb86521c0ddf,
     type: 2}
   m_fontSharedMaterials: []
@@ -1702,13 +1791,13 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
   m_isInputParsingRequired: 0
   m_inputSource: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_subTextObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -1720,6 +1809,19 @@ MonoBehaviour:
   - {fileID: 0}
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4356116107627818861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5345501014717538059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c4bf886f43b2924990f16e30f3c6ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  field: 3
 --- !u!1 &5345501014907562829
 GameObject:
   m_ObjectHideFlags: 0

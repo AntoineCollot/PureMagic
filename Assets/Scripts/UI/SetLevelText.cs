@@ -9,6 +9,7 @@ public class SetLevelText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<TextMeshProUGUI>().text = "Niveau " + SceneManager.GetActiveScene().buildIndex + " fini !";
+        TextMeshProUGUI text = GetComponent<TextMeshProUGUI>();
+        text.text = string.Format(text.text,SceneManager.GetActiveScene().buildIndex);
     }
 }

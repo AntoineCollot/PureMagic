@@ -14,10 +14,10 @@ public class RequestValidationEffect : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.Instance.onRequestCompleted.AddListener(OnRequestCompleted);   
+        RequestsManager.Instance.onRequestCompleted.AddListener(OnRequestCompleted);   
     }
 
-    public void OnRequestCompleted()
+    public void OnRequestCompleted(RequestsManager.PixelRequest request)
     {
         particles.Play();
     }

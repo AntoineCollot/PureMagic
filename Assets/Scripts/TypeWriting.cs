@@ -34,4 +34,9 @@ public class TypeWriting : MonoBehaviour
 
         text.maxVisibleCharacters = 100;
     }
+
+    public void ForceInit()
+    {
+        GetComponent<TextMeshProUGUI>().maxVisibleCharacters = 0;
+    }
 }

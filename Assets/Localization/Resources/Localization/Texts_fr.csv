@@ -1,0 +1,20 @@
+#Menues
+Button_TryAgain;Réessayer
+Button_Continue;Continuer
+Button_Menu;Menu
+Button_Beginner;Débutant
+Button_Veteran;Vétéran
+
+#Levels
+Level_GameOver;Tu l'as rendu triste :(
+Level_Cleared;Niveau {0} fini !
+
+#Tutorial
+Tuto_Grandpa_Main0;Allez ma petite, utilise ta magie pour nettoyer ces vers !
+Tuto_Grandpa_Main1;(Pssst !)
+Tuto_Grandpa_Main2;(faites lui croire qu'elle fait ça toute seule...)
+Tuto_Grandpa_Main3;(Suivez ses intentions !)
+Tuto_Grandpa_TooSoon0;Trop tôt !
+Tuto_Grandpa_TooSoon1;(Attendez qu'elle fasse un geste !)
+Tuto_Grandpa_TooLate0;Trop tard !
+Tuto_Grandpa_TooLate1;(Il faut cliquer sur les vers quand elle les pointe de la baguette !)

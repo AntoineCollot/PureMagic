@@ -18,6 +18,6 @@ public class RingRequestProgress : MonoBehaviour
     {
         bool cursorOnRight = Input.mousePosition.x > Screen.width * 0.5f;
 
-        image.fillAmount = GameManager.Instance.GetRequestProgress(cursorOnRight);
+        image.fillAmount = RequestsManager.Instance.GetRequestProgress(cursorOnRight);
     }
 }
