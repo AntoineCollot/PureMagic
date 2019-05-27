@@ -1,0 +1,20 @@
+#Menues
+Button_TryAgain;Try Again
+Button_Continue;Continue
+Button_Menu;Menu
+Button_Beginner;Beginner
+Button_Veteran;Veteran
+
+#Levels
+Level_GameOver;You made her sad :(
+Level_Cleared;Level {0} cleared !
+
+#Tutorial
+Tuto_Grandpa_Main0;Come on sweetheart, use you magic to clean all those worms !
+Tuto_Grandpa_Main1;(Pssst !)
+Tuto_Grandpa_Main2;(Make her believe she is doing it herself...)
+Tuto_Grandpa_Main3;(Follow her intentions !)
+Tuto_Grandpa_TooSoon0;Too soon !
+Tuto_Grandpa_TooSoon1;(Wait for her to make a move !)
+Tuto_Grandpa_TooLate0;Too late !
+Tuto_Grandpa_TooLate1;(You have to click on the worms when she makes a move !)
