@@ -1,0 +1,8 @@
+Versions:
+Jam : version 1.2 (bug free).
+Mise à jour 2.0:
+	- Amélioré la consistance du tracé lorsque le joueur bouge le curseur rapidement.
+	- Ajouté un système de nettoyage des pixels isolés
+	- Corrigé l'orthographe dans les textes
+	- Rajouté les accents dans la police
+	- Rajouté des réactions du grand père lors d'erreurs dans le tuto ("Trop top!" et "Trop tard!")
