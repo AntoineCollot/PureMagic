@@ -61,5 +61,8 @@ public enum TextFieldLocalization
     Tuto_Grandpa_TooLate0,
     Tuto_Grandpa_TooLate1,
     Button_Beginner,
-    Button_Veteran
+    Button_Veteran,
+    Tuto_Grandpa_Gesture,
+    Tuto_Grandpa_QuantityFailed,
+    Tuto_Grandpa_QuantityMatters
 }

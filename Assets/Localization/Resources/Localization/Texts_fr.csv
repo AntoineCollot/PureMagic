@@ -6,7 +6,7 @@ Button_Beginner;Débutant
 Button_Veteran;Vétéran
 
 #Levels
-Level_GameOver;Tu l'as rendu triste :(
+Level_GameOver;Tu l'as rendue triste :(
 Level_Cleared;Niveau {0} fini !
 
 #Tutorial
@@ -18,3 +18,6 @@ Tuto_Grandpa_TooSoon0;Trop tôt !
 Tuto_Grandpa_TooSoon1;(Attendez qu'elle fasse un geste !)
 Tuto_Grandpa_TooLate0;Trop tard !
 Tuto_Grandpa_TooLate1;(Il faut cliquer sur les vers quand elle les pointe de la baguette !)
+Tuto_Grandpa_Gesture;Fais un grand geste pour nettoyer plus de vers !
+Tuto_Grandpa_QuantityFailed;(Il faut nettoyer toute cette quantité de vers quand elle fait ce geste.)
+Tuto_Grandpa_QuantityMatters;(Si les vers sont en gros tas, n'utilisez pas tout d'un coup.)

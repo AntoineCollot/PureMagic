@@ -416,6 +416,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Girl
       objectReference: {fileID: 0}
+    - target: {fileID: 119266949046265687, guid: 131da540d810b30459d023e13544d3a3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 119266949046265685, guid: 131da540d810b30459d023e13544d3a3,
         type: 3}
       propertyPath: m_LocalPosition.x
