@@ -628,7 +628,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "(Il faut nettoyer toute cette quantit\xE9 de vers quand elle fait ce geste.)"
+  m_text: "(Il faut transformer cette quantit\xE9 de vers quand elle fait ce geste.)"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3c698b3b3c700784bb24b44c15fe8339, type: 2}
   m_sharedMaterial: {fileID: 21565917653802376, guid: 3c698b3b3c700784bb24b44c15fe8339,

@@ -10,7 +10,8 @@ Shader "Sprites/Worms"
 		_Color("Tint", Color) = (1,1,1,1)
 		_OutlineColor("Outline", Color) = (1,1,1,1)
 		_MoveTexture("MovementTexture", 2D) = "white" {}
-		_MoveFrequency("Move Frequency",Range(0,100)) = 1	
+		_MoveFrequency("Wave Frequency",Range(0,100)) = 1	
+		_WaveSpeed("Wave Speed",Range(0,1)) = 0.3	
 		[MaterialToggle] PixelSnap("Pixel snap", Float) = 0
 		[HideInInspector] _RendererColor("RendererColor", Color) = (1,1,1,1)
 		[HideInInspector] _Flip("Flip", Vector) = (1,1,1,1)
@@ -50,12 +51,14 @@ Shader "Sprites/Worms"
 	sampler2D _MoveTexture;
 	fixed4 _OutlineColor;
 	half _MoveFrequency;
+	half _WaveSpeed;
 
 	fixed4 Frag(v2f IN) : SV_Target
 	{
-		//half moveThreshold = cos(_Time.y * _MoveFrequency + cos(IN.texcoord.x * 4) + sin(IN.texcoord.y * 4));
-		half moveThreshold = cos(_Time.y * _MoveFrequency + snoise(half2(IN.texcoord.x*2+_Time.y,IN.texcoord.y*2)));
-		//half moveThreshold = cos(_Time.y * _MoveFrequency + (cos(IN.texcoord.x * (fmod(_Time.z,10)+5)) + sin (IN.texcoord.y * (fmod(_Time.z,10)+7))) * 0.3);
+		float2 uv = trunc(IN.texcoord *20) * 0.2;
+		half moveThreshold = cos(_Time.y * _MoveFrequency + cos(uv.x * 4)*_WaveSpeed + sin(uv.y * 4) * _WaveSpeed);
+		//half moveThreshold = cos(_Time.y * _MoveFrequency + snoise(half2(uv.x*1+_Time.y,uv.y*1)));
+		//half moveThreshold = cos(_Time.y * _MoveFrequency + (cos(uv.x * (fmod(_Time.z,10)+5)) + sin (uv.y * (fmod(_Time.z,10)+7))) * 0.3);
 		fixed4 c = SampleSpriteTexture(IN.texcoord) * IN.color * step(0,moveThreshold) +  tex2D(_MoveTexture, IN.texcoord)* IN.color * step(moveThreshold,0);		
 		fixed4 paint = tex2D(_PaintMap, IN.texcoord);
 		c.a *= step(0.0001,paint.r);
