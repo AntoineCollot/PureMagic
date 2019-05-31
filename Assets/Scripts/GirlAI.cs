@@ -6,8 +6,8 @@ public class GirlAI : MonoBehaviour
 {
     [Header("Requests")]
 
-    [Tooltip("How many request of each type in this level, id 0 is small, 1 medium, 2 big, 3 around")]
-    public int[] requestCount = new int[4];
+    [Tooltip("How many request of each type in this level")]
+    public MagicRequestAmount[] requestCount;
 
     List<MagicRequest> requests = new List<MagicRequest>();
     int startRequestCount;
@@ -15,14 +15,15 @@ public class GirlAI : MonoBehaviour
     {
         get
         {
-            return (float)requests.Count / startRequestCount;
+            return 1.0f - (float)requests.Count / startRequestCount;
         }
     }
 
     [Header("Parameters")]
 
-    public float minRequestInterval;
+    public float startDelay = 2;
     public float maxRequestInterval;
+    public float minRequestInterval;
 
     [Header("Animations")]
 
@@ -37,12 +38,9 @@ public class GirlAI : MonoBehaviour
         //Populate the request list
         for (int i = 0; i < requestCount.Length; i++)
         {
-            for (int r = 0; r < requestCount[i]; r++)
+            for (int r = 0; r < requestCount[i].count; r++)
             {
-                if(requestCount[i]==1)
-                    requests.Add(new MagicRequest((MagicRequest.Type)i,false));
-                else
-                    requests.Add(new MagicRequest((MagicRequest.Type)i));
+                requests.Add(new MagicRequest(requestCount[i].type, requestCount[i].direction));
             }
         }
 
@@ -60,9 +58,11 @@ public class GirlAI : MonoBehaviour
 
     IEnumerator ThrowRequests()
     {
-        while(requests.Count> 0 && !GameManager.gameIsOver)
+        yield return new WaitForSeconds(startDelay- maxRequestInterval);
+
+        while (requests.Count> 0 && !GameManager.gameIsOver)
         {
-            yield return new WaitForSeconds(Mathf.Lerp(maxRequestInterval, minRequestInterval, Progress));
+            yield return new WaitForSeconds(Mathf.Lerp(minRequestInterval, maxRequestInterval, Progress));
 
             //Throw a new request
             MagicRequest currentRequest = ExecuteNewRequest();
@@ -113,14 +113,14 @@ public class GirlAI : MonoBehaviour
 #if UNITY_EDITOR
     private void OnValidate()
     {
-        if (requestCount.Length < 4)
-            return;
-
         int pixelRequiered = 0;
-        pixelRequiered += requestCount[0] * MagicRequest.smallSpellPixels;
-        pixelRequiered += requestCount[1] * MagicRequest.mediumSpellPixels;
-        pixelRequiered += requestCount[2] * MagicRequest.bigSpellPixels;
-        pixelRequiered += requestCount[3] * MagicRequest.aroundSpellPixels *2;
+        for (int i = 0; i < requestCount.Length; i++)
+        {
+            if(requestCount[i].type == MagicRequest.Type.Around)
+                pixelRequiered += MagicRequest.GetPixelValue(requestCount[i].type) * requestCount[i].count * 2;
+            else
+                pixelRequiered += MagicRequest.GetPixelValue(requestCount[i].type) * requestCount[i].count;
+        }
 
         Debug.Log("Pixel requiered : "+ pixelRequiered);
     }
@@ -158,22 +158,27 @@ public struct MagicRequest
         }
     }
 
-    public MagicRequest(Type type)
+    public static int GetPixelValue(Type type)
     {
-        this.type = type;
-        direction = Direction.Both;
-        if(type!=Type.Around)
-            direction = GetPseudoRandomDirection();
+        switch (type)
+        {
+            case Type.Small:
+                return smallSpellPixels;
+            case Type.Medium:
+                return mediumSpellPixels;
+            case Type.Big:
+                return bigSpellPixels;
+            case Type.Around:
+                return aroundSpellPixels;
+            default:
+                return 0;
+        }
     }
 
-    public MagicRequest(Type type, bool right)
+    public MagicRequest(Type type,Direction direction)
     {
         this.type = type;
-        direction = Direction.Both;
-        if (type != Type.Around && right)
-            direction = Direction.Right;
-        else if(type != Type.Around)
-            direction = Direction.Left;
+        this.direction = direction;
     }
 
     public int SpellId
@@ -192,27 +197,14 @@ public struct MagicRequest
         }
     }
 
-    public static Queue<Direction> availableDirections = new Queue<Direction>();
-    public Direction GetPseudoRandomDirection()
-    {
-        if(availableDirections.Count==0)
-        {
- 
-            if(Random.Range(0.0f,1.0f)>0.5f)
-            {
-                availableDirections.Enqueue(Direction.Right);
-                availableDirections.Enqueue(Direction.Left);
-            }
-            else
-            {
-                availableDirections.Enqueue(Direction.Left);
-                availableDirections.Enqueue(Direction.Right);
-            }
-        }
-
-        return availableDirections.Dequeue();
-    }
-
     public Type type;
     public Direction direction;
+}
+
+[System.Serializable]
+public struct MagicRequestAmount
+{
+    public MagicRequest.Type type;
+    public MagicRequest.Direction direction;
+    public int count;
 }
