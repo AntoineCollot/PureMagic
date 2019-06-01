@@ -5,10 +5,59 @@ using UnityEngine;
 public static class LocalizationData
 {
     static Dictionary<TextFieldLocalization, string> texts;
+    static int currentLanguage;
+
+    public static string LanguageName
+    {
+        get
+        {
+            return ((Language)currentLanguage).ToString();
+        }
+    }
+
+    //Debug
+    public static string OtherLanguageName
+    {
+        get
+        {
+            return ((Language)(1 -currentLanguage)).ToString();
+        }
+    }
 
     static LocalizationData()
     {
-        LoadLanguageData("fr");
+        if (PlayerPrefs.HasKey("Language"))
+        {
+            currentLanguage = PlayerPrefs.GetInt("Language", Language.English.GetHashCode());
+        }
+        else
+        {
+            if (Application.systemLanguage == SystemLanguage.French)
+            {
+                currentLanguage = Language.French.GetHashCode();
+            }
+            else
+            {
+                currentLanguage = Language.English.GetHashCode();
+            }
+        }
+
+        LoadLanguage(currentLanguage);
+    }
+
+    static void LoadLanguage(int id)
+    {
+        switch (id)
+        {
+            case 0:
+                LoadLanguageData("en");
+                break;
+            case 1:
+                LoadLanguageData("fr");
+                break;
+            default:
+                break;
+        }
     }
 
     static void LoadLanguageData(string language)
@@ -39,6 +88,16 @@ public static class LocalizationData
         }
     }
 
+    public static void SwitchLanguage()
+    {
+        if (currentLanguage == 0)
+            currentLanguage = 1;
+        else
+            currentLanguage = 0;
+
+        LoadLanguage(currentLanguage);
+    }
+
     public static string GetText(TextFieldLocalization field)
     {
         return texts[field];
@@ -66,3 +125,5 @@ public enum TextFieldLocalization
     Tuto_Grandpa_QuantityFailed,
     Tuto_Grandpa_QuantityMatters
 }
+
+public enum Language { English,French }
